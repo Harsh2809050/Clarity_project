@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "guest": "Mahesh Balakrishnan",
+    "title": "Why Indian Schools Are Failing Their Best Teachers",
+    "date": "May 19, 2026",
+    "description": "A deep dive into teacher attrition, the IB-CBSE partnership, and why student happiness should be the only metric that matters. Mahesh argues that most school reform ignores the one variable that changes everything.",
+    "topic": "Education Policy",
+    "url": "https://yourname.beehiiv.com/p/placeholder-1"
+  },
+  {
+    "id": 2,
+    "guest": "Priya Anand",
+    "title": "Building EdTech That Actually Works for Bharat",
+    "date": "May 5, 2026",
+    "description": "Priya explains why most EdTech products are built for urban English-speakers and how her startup is different — vernacular-first, offline-capable, and designed around the constraints of a government school teacher.",
+    "topic": "EdTech",
+    "url": "https://yourname.beehiiv.com/p/placeholder-2"
+  },
+  {
+    "id": 3,
+    "guest": "Rohan Verma",
+    "title": "NEP 2020: Promise vs. Reality on the Ground",
+    "date": "April 21, 2026",
+    "description": "Three years after NEP was announced, what has actually changed in classrooms? Rohan, a former government advisor who helped draft the policy, gives an unvarnished assessment of what landed and what didn't.",
+    "topic": "Education Policy",
+    "url": "https://yourname.beehiiv.com/p/placeholder-3"
+  },
+  {
+    "id": 4,
+    "guest": "Kavitha Iyer",
+    "title": "From IIT to Villages: The Entrepreneurship No One Talks About",
+    "date": "April 7, 2026",
+    "description": "Kavitha left a Goldman Sachs role to build a supply chain startup for rural artisans. Her framework for validating ideas in markets with zero data — and zero safety net — is one of the most practical things I've heard.",
+    "topic": "Entrepreneurship",
+    "url": "https://yourname.beehiiv.com/p/placeholder-4"
+  },
+  {
+    "id": 5,
+    "guest": "Dr. Sanjay Patel",
+    "title": "Why India's Higher Education Rankings Game Is Broken",
+    "date": "March 24, 2026",
+    "description": "The former VC of a top-ranked university explains what the NIRF rankings actually measure, what they miss entirely, and why the institutions winning the game are often the ones doing the least interesting work.",
+    "topic": "Higher Education",
+    "url": "https://yourname.beehiiv.com/p/placeholder-5"
+  },
+  {
+    "id": 6,
+    "guest": "Meera Krishnan",
+    "title": "The Policy Bottleneck Killing Indian Startups",
+    "date": "March 10, 2026",
+    "description": "A policy researcher at a Delhi think tank breaks down the three regulatory knots strangling early-stage startups — and proposes concrete reforms that wouldn't require a single rupee of additional budget.",
+    "topic": "Policy",
+    "url": "https://yourname.beehiiv.com/p/placeholder-6"
+  },
+  {
+    "id": 7,
+    "guest": "Aditya Rao",
+    "title": "Skill India at 10: What Worked, What Flopped",
+    "date": "February 24, 2026",
+    "description": "The architect of a national skill development program does a candid post-mortem — including the decisions he now regrets — and maps what version 2.0 must look like if it's going to move the needle on employment.",
+    "topic": "Skill Development",
+    "url": "https://yourname.beehiiv.com/p/placeholder-7"
+  },
+  {
+    "id": 8,
+    "guest": "Nisha Gupta",
+    "title": "Raising a Series A in India vs. Silicon Valley: The Brutal Truth",
+    "date": "February 10, 2026",
+    "description": "Nisha closed both an Indian and a US round in the same year. Her candid comparison of investor behaviour, term sheets, and the sheer difference in due diligence culture will make you rethink the fundraising playbook.",
+    "topic": "Entrepreneurship",
+    "url": "https://yourname.beehiiv.com/p/placeholder-8"
+  }
+]

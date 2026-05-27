@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>The Insight Hour — Conversations Shaping India's Future</title>
+  <meta name="description" content="Weekly deep-dives into education, policy, and entrepreneurship in India. Real conversations with the people actually doing the work — plus a detailed newsletter after every episode." />
+  <meta name="author" content="[YOUR NAME]" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://yourpodcast.com/" />
+  <meta property="og:title"       content="The Insight Hour — Conversations Shaping India's Future" />
+  <meta property="og:description" content="Weekly deep-dives into education, policy, and entrepreneurship in India." />
+  <meta property="og:image"       content="https://yourpodcast.com/assets/images/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@yourhandle" />
+  <meta name="twitter:title"       content="The Insight Hour" />
+  <meta name="twitter:description" content="Weekly deep-dives into education, policy, and entrepreneurship in India." />
+  <meta name="twitter:image"       content="https://yourpodcast.com/assets/images/og-image.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://yourpodcast.com/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Prevent dark-mode flash -->
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+</head>
+
+<body>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+
+        <a href="index.html" class="nav-brand" aria-label="The Insight Hour — Home">
+          <div class="brand-icon" aria-hidden="true">TI</div>
+          <span class="brand-text">The Insight Hour</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="subscribe.html" class="nav-cta">Subscribe Free</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+            <!-- Icon injected by JS -->
+          </button>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg-glow-1" aria-hidden="true"></div>
+      <div class="hero-bg-glow-2" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="hero-badge" aria-label="Currently live">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Season 1 — Now Live
+          </div>
+
+          <h1 class="hero-title" id="hero-heading">
+            Real conversations with India's<br>
+            <span class="accent">most interesting minds</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Weekly deep-dives into education, policy, and entrepreneurship —
+            with the people actually doing the work. Every episode becomes a
+            newsletter packed with insights you can act on.
+          </p>
+
+          <div class="hero-actions">
+            <a href="subscribe.html" class="btn btn-primary">
+              Subscribe Free
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="newsletter.html" class="btn btn-outline">Browse the Archive</a>
+          </div>
+
+          <div class="hero-divider" aria-hidden="true"></div>
+
+          <div class="hero-stats" aria-label="Podcast statistics">
+            <div class="stat-item">
+              <span class="stat-number">8</span>
+              <span class="stat-label">Episodes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5K+</span>
+              <span class="stat-label">Subscribers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">6</span>
+              <span class="stat-label">Topics</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Free</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT (HOME) ==================== -->
+    <section class="section about-home" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Image column -->
+          <div class="about-image-wrapper fade-in">
+            <!-- Replace this div with an <img> tag once you have your photo -->
+            <div class="about-image-placeholder" role="img" aria-label="Host photo placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span>Your photo here</span>
+            </div>
+            <div class="about-accent-card" aria-hidden="true">
+              <div class="accent-card-number">8</div>
+              <div class="accent-card-label">Episodes Live</div>
+            </div>
+          </div>
+
+          <!-- Text column -->
+          <div class="about-text fade-in fade-in-delay-2">
+            <span class="section-label">About the Host</span>
+            <h2 id="about-heading">Ideas worth sharing deserve a real audience</h2>
+            <p>
+              I'm <strong>[Your Name]</strong>, a journalist and researcher who has spent years
+              covering education, policy, and entrepreneurship in India. I kept meeting remarkable
+              people — school principals rewriting curriculum from scratch, bureaucrats pushing
+              reform from the inside, founders solving problems no investor wanted to fund — whose
+              ideas were changing lives quietly, with almost no attention.
+            </p>
+            <p>
+              The Insight Hour is my attempt to give those conversations the platform they deserve.
+              Each episode, I sit down with someone who is genuinely moving the needle, and we
+              go deep — no soundbites, no PR spin.
+            </p>
+            <p>
+              After every episode, I write a detailed newsletter breaking down the key frameworks,
+              debates, and takeaways from our conversation. Subscribe and you'll get that in your
+              inbox every week.
+            </p>
+            <a href="about.html" class="btn btn-dark-outline">
+              Read My Story
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED GUESTS ==================== -->
+    <section class="section guests-section" aria-labelledby="guests-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">Featured Guests</span>
+          <h2 class="section-title" id="guests-heading">Some of the conversations so far</h2>
+          <p class="section-subtitle">
+            Every guest has something to say that's worth your time. Here are three
+            that sparked particularly strong reactions from readers.
+          </p>
+        </div>
+
+        <div class="guests-grid">
+
+          <!-- Guest 1 -->
+          <article class="guest-card fade-in fade-in-delay-1">
+            <div class="guest-avatar" aria-hidden="true">MB</div>
+            <div class="guest-name">Mahesh Balakrishnan</div>
+            <div class="guest-role">Director, The Teacher Fund</div>
+            <p class="guest-episode-title">
+              "Most school reform is designed by people who haven't spent a week in a government classroom.
+              That's why it keeps failing in the same predictable ways."
+            </p>
+            <span class="guest-topic-badge">Education Policy</span>
+          </article>
+
+          <!-- Guest 2 -->
+          <article class="guest-card fade-in fade-in-delay-2">
+            <div class="guest-avatar" aria-hidden="true">KI</div>
+            <div class="guest-name">Kavitha Iyer</div>
+            <div class="guest-role">Founder, ArtisanLink</div>
+            <p class="guest-episode-title">
+              "Everyone talks about building for Bharat. Kavitha actually did it — she walked away
+              from Goldman Sachs to build supply chains for rural artisans, village by village."
+            </p>
+            <span class="guest-topic-badge">Entrepreneurship</span>
+          </article>
+
+          <!-- Guest 3 -->
+          <article class="guest-card fade-in fade-in-delay-3">
+            <div class="guest-avatar" aria-hidden="true">RV</div>
+            <div class="guest-name">Rohan Verma</div>
+            <div class="guest-role">Former Advisor, Ministry of Education</div>
+            <p class="guest-episode-title">
+              "Rohan helped write NEP 2020. Listening to him reconcile the policy he designed
+              with what actually reached classrooms is one of the most honest things I've heard."
+            </p>
+            <span class="guest-topic-badge">Education Policy</span>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== LATEST NEWSLETTERS ==================== -->
+    <section class="section newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">Latest Issues</span>
+          <h2 class="section-title" id="newsletter-heading">What landed in inboxes recently</h2>
+          <p class="section-subtitle">
+            Each issue is a standalone read — key arguments, frameworks, and the ideas worth
+            chewing on from that week's conversation.
+          </p>
+        </div>
+
+        <!-- Cards are injected by main.js from data/newsletters.json -->
+        <div class="newsletter-grid" id="latestNewsletters" aria-live="polite">
+          <!-- Loading state -->
+          <p style="color:var(--text-muted);text-align:center;padding:24px 0;grid-column:1/-1">Loading latest issues…</p>
+        </div>
+
+        <div class="section-footer">
+          <a href="newsletter.html" class="btn btn-dark-outline">
+            Browse All Issues
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="about-cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <span class="section-label">Free Newsletter</span>
+        <h2 id="cta-heading" class="fade-in">Don't miss the next conversation</h2>
+        <p class="fade-in fade-in-delay-1">
+          Get a detailed breakdown of every episode — key insights, frameworks, and ideas —
+          delivered to your inbox. Free, always.
+        </p>
+        <a href="subscribe.html" class="btn btn-primary fade-in fade-in-delay-2">
+          Subscribe Free — Takes 10 Seconds
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div>
+          <a href="index.html" class="nav-brand" aria-label="The Insight Hour — Home">
+            <div class="brand-icon" aria-hidden="true">TI</div>
+            <span class="brand-text">The Insight Hour</span>
+          </a>
+          <p class="footer-brand-tagline">
+            Real conversations with the people shaping India's future.
+            Education, policy, and entrepreneurship — every week.
+          </p>
+        </div>
+
+        <!-- Pages -->
+        <div>
+          <h4>Pages</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="subscribe.html">Subscribe</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h4>Follow Along</h4>
+          <div class="social-links">
+            <!-- Replace # with your actual profile URLs -->
+            <a href="#" class="social-link" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter / X" rel="noopener noreferrer" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube" rel="noopener noreferrer" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mini subscribe -->
+        <div class="footer-subscribe">
+          <h4>Newsletter</h4>
+          <p>Get the next issue straight to your inbox. No spam, ever.</p>
+          <form class="footer-form" id="footerSubscribeForm" novalidate>
+            <input type="email" class="footer-email-input" placeholder="Your email" aria-label="Email address" required />
+            <button type="submit" class="footer-form-btn">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 The Insight Hour. All rights reserved.</p>
+        <nav class="footer-bottom-links" aria-label="Footer links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="subscribe.html">Unsubscribe</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
