@@ -75,18 +75,18 @@ export function ClarityLogo({
         className={cn('shrink-0', 'text-[#1B2D4F] dark:text-[#EDE8E2]', className)}>
         <Sun cx={48} cy={48} />
 
-        {/* THE — sits right above Clarity with a small gap */}
-        <text x="104" y="40" textAnchor="start" fill="currentColor"
-          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '8.5px',
-                   fontWeight: 500, letterSpacing: '3.5px' }}>THE</text>
-
-        {/* Clarity */}
+        {/* Clarity — left-anchored, width ≈81 units, centre ≈143 */}
         <text x="102" y="67" textAnchor="start" fill="currentColor"
           style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '29px',
                    fontWeight: 800, letterSpacing: '-0.5px' }}>Clarity</text>
 
-        {/* PROJECT */}
-        <text x="104" y="82" textAnchor="start" fill={ORANGE}
+        {/* THE — centred over Clarity (midpoint of Clarity text) */}
+        <text x="143" y="40" textAnchor="middle" fill="currentColor"
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '8.5px',
+                   fontWeight: 500, letterSpacing: '3.5px' }}>THE</text>
+
+        {/* PROJECT — centred below Clarity */}
+        <text x="143" y="82" textAnchor="middle" fill={ORANGE}
           style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '9px',
                    fontWeight: 600, letterSpacing: '3.5px' }}>PROJECT</text>
       </svg>
