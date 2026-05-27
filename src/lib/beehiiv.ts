@@ -80,7 +80,7 @@ export async function subscribeToBeehiiv(
       body: JSON.stringify({
         email,
         reactivate_existing: true,
-        send_welcome_email: true,
+        send_welcome_email: false, // we send our own via Resend
         utm_source: utmSource,
         utm_medium: 'inline_form',
         utm_campaign: 'website_subscribe',

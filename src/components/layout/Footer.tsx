@@ -4,8 +4,6 @@ import { ClarityLogo } from '@/components/ui/ClarityLogo'
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/our-work', label: 'Our Work' },
-  { href: '/archive', label: 'Archive' },
   { href: '/about', label: 'About' },
   { href: '/be-a-guest', label: 'Be a Guest' },
   { href: '/subscribe', label: 'Subscribe' },

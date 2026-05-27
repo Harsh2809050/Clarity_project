@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { AnimateIn } from '@/components/ui/AnimateIn'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default function OurWorkPage() {
+  redirect('/')
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────── */}

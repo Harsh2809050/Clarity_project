@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import { ArchiveGrid } from '@/components/archive/ArchiveGrid'
 import { SubscribeCTA } from '@/components/home/SubscribeCTA'
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600
 
 export default async function ArchivePage() {
+  redirect('/')
   const live = await fetchBeehiivPosts(50)
   const all = live ?? fallback
 
