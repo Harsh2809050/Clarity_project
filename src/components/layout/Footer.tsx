@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { SubscribeForm } from '@/components/ui/SubscribeForm'
+import { ClarityLogo } from '@/components/ui/ClarityLogo'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -28,14 +29,7 @@ export function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-7 h-7 rounded-lg bg-sage flex items-center justify-center">
-                <span className="font-serif text-[11px] font-bold text-white">CP</span>
-              </div>
-              <span className="font-serif text-[15px] font-semibold text-ink dark:text-ink-snow tracking-tight">
-                Clarity Project
-              </span>
-            </Link>
+            <ClarityLogo variant="stacked" size={90} asLink />
             <p className="font-sans text-sm text-ink-muted dark:text-ink-snow-muted leading-relaxed max-w-xs">
               Real conversations with the architects, reformers, and builders reshaping education, policy, and entrepreneurship in India.
             </p>

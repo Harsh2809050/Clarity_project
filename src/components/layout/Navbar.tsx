@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from '@/components/ui/ThemeProvider'
+import { ClarityLogo } from '@/components/ui/ClarityLogo'
 import { cn } from '@/lib/utils'
 
 const links = [
@@ -57,12 +58,10 @@ export function Navbar() {
       <nav className="container-editorial flex items-center justify-between h-16">
 
         {/* Brand */}
-        <Link href="/" aria-label="Clarity Project — Home"
-          className="flex items-center gap-3 group">
-          <div className="w-7 h-7 rounded-lg bg-sage flex items-center justify-center shrink-0">
-            <span className="font-serif text-[11px] font-bold text-white tracking-tight">CP</span>
-          </div>
-          <span className="font-serif text-[15px] font-semibold text-ink dark:text-ink-snow tracking-tight">
+        <Link href="/" aria-label="The Clarity Project — Home"
+          className="flex items-center gap-2.5 group">
+          <ClarityLogo variant="icon" size={34} />
+          <span className="font-sans text-[14px] font-semibold text-ink dark:text-ink-snow tracking-tight">
             Clarity Project
           </span>
         </Link>

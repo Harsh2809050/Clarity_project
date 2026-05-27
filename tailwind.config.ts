@@ -33,11 +33,20 @@ const config: Config = {
         'ink-snow-muted':'#A39D98',
         'ink-snow-faint':'#6E6862',
 
-        // ── Accent — muted sage green (soothing, growth, editorial)
-        sage:            '#4A7C5F',
-        'sage-hover':    '#3D6A4F',
-        'sage-light':    '#EBF3EE',
-        'sage-glow':     '#7FB38A',  // lighter for dark mode
+        // ── Accent — brand orange (from "PROJECT" in logo) + amber glow
+        sage:            '#E05530',   // brand orange — buttons, links, accents
+        'sage-hover':    '#C0472A',   // darker on hover
+        'sage-light':    '#FDEEE9',   // very light tint for card backgrounds
+        'sage-glow':     '#F5A725',   // brand amber — glow / dark-mode variant
+
+        // ── Full brand palette (logo ray colours + core marks)
+        'brand-navy':    '#1B2D4F',
+        'brand-orange':  '#E05530',
+        'brand-amber':   '#F5A725',
+        'brand-teal':    '#68B8C5',
+        'brand-blue':    '#2B5BA0',
+        'brand-red':     '#C74444',
+        'brand-gold':    '#D4A843',
 
         // ── Warm card surface
         surface:         '#FFFFFF',
