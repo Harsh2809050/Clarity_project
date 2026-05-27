@@ -29,7 +29,7 @@ export function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-2 space-y-5">
-            <ClarityLogo variant="stacked" size={90} asLink />
+            <ClarityLogo variant="stacked" size={115} asLink />
             <p className="font-sans text-sm text-ink-muted dark:text-ink-snow-muted leading-relaxed max-w-xs">
               Real conversations with the architects, reformers, and builders reshaping education, policy, and entrepreneurship in India.
             </p>

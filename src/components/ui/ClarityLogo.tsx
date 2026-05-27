@@ -39,7 +39,7 @@ function Sun({ cx, cy }: { cx: number; cy: number }) {
 
 // ── Component ─────────────────────────────────────────────
 interface ClarityLogoProps {
-  variant?: 'icon' | 'stacked'
+  variant?: 'icon' | 'stacked' | 'horizontal'
   size?: number
   asLink?: boolean
   className?: string
@@ -61,6 +61,34 @@ export function ClarityLogo({
         role="img" aria-label="The Clarity Project"
         className={cn('shrink-0', className)}>
         <Sun cx={60} cy={60} />
+      </svg>
+    )
+  } else if (variant === 'horizontal') {
+    // Horizontal: sun left, THE / Clarity / PROJECT stacked right
+    // Sun: R_OUT=48, centre at cx=48 cy=48 → fits in 96×96
+    // Text block vertically centred in 96 units, left-anchored at x=104
+    const VW = 220, VH = 96
+    const w  = Math.round(size * (VW / VH))
+    svg = (
+      <svg viewBox={`0 0 ${VW} ${VH}`} width={w} height={size}
+        role="img" aria-label="The Clarity Project"
+        className={cn('shrink-0', 'text-[#1B2D4F] dark:text-[#EDE8E2]', className)}>
+        <Sun cx={48} cy={48} />
+
+        {/* THE */}
+        <text x="104" y="28" textAnchor="start" fill="currentColor"
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '8.5px',
+                   fontWeight: 500, letterSpacing: '3.5px' }}>THE</text>
+
+        {/* Clarity */}
+        <text x="104" y="63" textAnchor="start" fill="currentColor"
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '29px',
+                   fontWeight: 800, letterSpacing: '-0.5px' }}>Clarity</text>
+
+        {/* PROJECT */}
+        <text x="104" y="78" textAnchor="start" fill={ORANGE}
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '9px',
+                   fontWeight: 600, letterSpacing: '3.5px' }}>PROJECT</text>
       </svg>
     )
   } else {

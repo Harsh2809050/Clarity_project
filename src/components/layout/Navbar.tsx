@@ -58,13 +58,7 @@ export function Navbar() {
       <nav className="container-editorial flex items-center justify-between h-16">
 
         {/* Brand */}
-        <Link href="/" aria-label="The Clarity Project — Home"
-          className="flex items-center gap-2.5 group">
-          <ClarityLogo variant="icon" size={34} />
-          <span className="font-sans text-[14px] font-semibold text-ink dark:text-ink-snow tracking-tight">
-            Clarity Project
-          </span>
-        </Link>
+        <ClarityLogo variant="horizontal" size={46} asLink />
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-7">

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Clarity Project — Newsletter</title>
+</head>
+<body style="margin:0;padding:0;background:#F5F1EC;font-family:-apple-system,'Segoe UI',Arial,sans-serif;">
+
+<div style="max-width:620px;margin:0 auto;background:#FFFFFF;">
+
+  <!-- ── HEADER ───────────────────────────────────────── -->
+  <div style="background:#1B2D4F;padding:36px 48px;text-align:center;">
+    <!-- Sun icon (coloured rays, no SVG — email-safe) -->
+    <div style="font-size:32px;line-height:1;margin-bottom:10px;letter-spacing:-2px;">
+      <span style="color:#C74444;">╲</span><span style="color:#D4A843;">│</span><span style="color:#68B8C5;">╱</span><br/>
+      <span style="color:#2B5BA0;">─</span>
+      <span style="display:inline-block;width:22px;height:22px;background:#F5A725;border-radius:50%;border:3px solid #1B2D4F;outline:3px solid #1B2D4F;vertical-align:middle;margin:0 2px;"></span>
+      <span style="color:#2B5BA0;">─</span><br/>
+      <span style="color:#68B8C5;">╱</span><span style="color:#D4A843;">│</span><span style="color:#C74444;">╲</span>
+    </div>
+    <div style="color:#FFFFFF;font-size:9px;letter-spacing:5px;text-transform:uppercase;font-weight:500;margin-top:6px;">THE</div>
+    <div style="color:#FFFFFF;font-size:28px;font-weight:900;letter-spacing:-0.5px;line-height:1.1;">Clarity</div>
+    <div style="color:#E05530;font-size:9px;letter-spacing:5px;text-transform:uppercase;font-weight:700;">PROJECT</div>
+  </div>
+
+  <!-- ── ISSUE LABEL ─────────────────────────────────── -->
+  <div style="background:#F9F5F0;padding:14px 48px;text-align:center;border-bottom:3px solid #E05530;">
+    <span style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:2.5px;font-weight:600;">
+      Issue #{{ISSUE_NUMBER}} &nbsp;·&nbsp; {{DATE}}
+    </span>
+  </div>
+
+  <!-- ── MAIN CONTENT ────────────────────────────────── -->
+  <div style="padding:48px;background:#FFFFFF;">
+
+    <!-- Episode Title -->
+    <h1 style="font-size:26px;font-weight:900;color:#1B2D4F;line-height:1.25;margin:0 0 8px 0;">
+      {{EPISODE_TITLE}}
+    </h1>
+
+    <!-- Guest line -->
+    <p style="font-size:12px;color:#E05530;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 28px 0;">
+      with {{GUEST_NAME}} &nbsp;·&nbsp; {{GUEST_TITLE}}
+    </p>
+
+    <!-- Divider -->
+    <div style="height:1px;background:linear-gradient(to right,#E05530,#F5A725,#68B8C5);margin:0 0 28px 0;"></div>
+
+    <!-- Hook / Intro -->
+    <p style="font-size:16px;color:#2D2A28;line-height:1.75;margin:0 0 36px 0;">
+      {{INTRO_PARAGRAPH}}
+    </p>
+
+    <!-- ── INSIGHT 1 ──────────────────────────────────── -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+      <tr>
+        <td width="40" valign="top">
+          <div style="width:30px;height:30px;background:#E05530;border-radius:50%;text-align:center;line-height:30px;color:#FFFFFF;font-weight:800;font-size:14px;">1</div>
+        </td>
+        <td valign="top">
+          <h2 style="font-size:17px;font-weight:800;color:#1B2D4F;margin:3px 0 8px 0;">{{INSIGHT_1_HEADING}}</h2>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0;">{{INSIGHT_1_BODY}}</p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ── INSIGHT 2 ──────────────────────────────────── -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+      <tr>
+        <td width="40" valign="top">
+          <div style="width:30px;height:30px;background:#2B5BA0;border-radius:50%;text-align:center;line-height:30px;color:#FFFFFF;font-weight:800;font-size:14px;">2</div>
+        </td>
+        <td valign="top">
+          <h2 style="font-size:17px;font-weight:800;color:#1B2D4F;margin:3px 0 8px 0;">{{INSIGHT_2_HEADING}}</h2>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0;">{{INSIGHT_2_BODY}}</p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ── INSIGHT 3 ──────────────────────────────────── -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:36px;">
+      <tr>
+        <td width="40" valign="top">
+          <div style="width:30px;height:30px;background:#68B8C5;border-radius:50%;text-align:center;line-height:30px;color:#FFFFFF;font-weight:800;font-size:14px;">3</div>
+        </td>
+        <td valign="top">
+          <h2 style="font-size:17px;font-weight:800;color:#1B2D4F;margin:3px 0 8px 0;">{{INSIGHT_3_HEADING}}</h2>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0;">{{INSIGHT_3_BODY}}</p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ── PULL QUOTE ─────────────────────────────────── -->
+    <div style="background:#1B2D4F;border-left:4px solid #E05530;border-radius:0 10px 10px 0;padding:26px 30px;margin:0 0 36px 0;">
+      <p style="font-size:18px;color:#FFFFFF;line-height:1.65;font-style:italic;margin:0 0 12px 0;">
+        "{{PULL_QUOTE}}"
+      </p>
+      <p style="font-size:12px;color:#F5A725;margin:0;font-weight:700;letter-spacing:0.5px;">
+        — {{QUOTE_ATTRIBUTION}}
+      </p>
+    </div>
+
+    <!-- ── KEY TAKEAWAY ───────────────────────────────── -->
+    <div style="background:#FFF8F5;border:1.5px solid #E05530;border-radius:10px;padding:24px 28px;margin:0 0 36px 0;">
+      <p style="font-size:11px;color:#E05530;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin:0 0 10px 0;">This week's takeaway</p>
+      <p style="font-size:15px;color:#1B2D4F;line-height:1.7;margin:0;font-weight:500;">
+        {{KEY_TAKEAWAY}}
+      </p>
+    </div>
+
+    <!-- ── LISTEN LINK ─────────────────────────────────── -->
+    <p style="font-size:14px;color:#666;margin:0 0 6px 0;text-align:center;">Listen to the full episode →</p>
+    <div style="text-align:center;margin-bottom:36px;">
+      <a href="{{EPISODE_LINK}}" style="display:inline-block;background:#E05530;color:#FFFFFF;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;letter-spacing:0.3px;">
+        🎙 Listen on Spotify
+      </a>
+    </div>
+
+    <!-- Divider -->
+    <div style="height:1px;background:#EDE8E0;margin:0 0 32px 0;"></div>
+
+    <!-- Sign-off -->
+    <p style="font-size:15px;color:#444;line-height:1.75;margin:0 0 8px 0;">
+      Until next week,<br/>
+      <strong style="color:#1B2D4F;">Aarthik Ramkumar</strong><br/>
+      <span style="font-size:13px;color:#888;">Host, The Clarity Project</span>
+    </p>
+
+  </div>
+
+  <!-- ── CTA BAND ────────────────────────────────────── -->
+  <div style="background:#1B2D4F;padding:40px 48px;text-align:center;">
+    <p style="color:#EDE8E2;font-size:15px;margin:0 0 6px 0;font-weight:600;">Know someone who should read this?</p>
+    <p style="color:#A0B0C8;font-size:13px;margin:0 0 22px 0;">Forward it to them. It takes 5 seconds.</p>
+    <a href="https://clarityproject.in" style="display:inline-block;background:#E05530;color:#FFFFFF;padding:13px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">
+      Visit clarityproject.in →
+    </a>
+  </div>
+
+  <!-- ── FOOTER ──────────────────────────────────────── -->
+  <div style="background:#F9F5F0;padding:24px 48px;text-align:center;border-top:1px solid #E8E0D5;">
+    <p style="font-size:11px;color:#999;margin:0 0 6px 0;letter-spacing:0.5px;">
+      © 2026 The Clarity Project · clarityproject.in
+    </p>
+    <p style="font-size:11px;color:#BBB;margin:0;">
+      You received this because you subscribed at clarityproject.in<br/>
+      <a href="{{UNSUBSCRIBE_LINK}}" style="color:#BBB;text-decoration:underline;">Unsubscribe</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
