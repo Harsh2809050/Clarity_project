@@ -82,20 +82,20 @@ export function ClarityLogo({
         )}>
         <Sun cx={60} cy={54} />
 
-        {/* THE */}
+        {/* THE — use style= so Safari honours letter-spacing & font-family */}
         <text x="60" y="118" textAnchor="middle" fill="currentColor"
-          fontFamily="var(--font-sans),Inter,system-ui,sans-serif"
-          fontSize="8.5" fontWeight="500" letterSpacing="3.5">THE</text>
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '8.5px',
+                   fontWeight: 500, letterSpacing: '3.5px' }}>THE</text>
 
         {/* Clarity */}
         <text x="60" y="145" textAnchor="middle" fill="currentColor"
-          fontFamily="var(--font-sans),Inter,system-ui,sans-serif"
-          fontSize="30" fontWeight="800" letterSpacing="-0.5">Clarity</text>
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '30px',
+                   fontWeight: 800, letterSpacing: '-0.5px' }}>Clarity</text>
 
         {/* PROJECT */}
         <text x="60" y="160" textAnchor="middle" fill={ORANGE}
-          fontFamily="var(--font-sans),Inter,system-ui,sans-serif"
-          fontSize="9" fontWeight="600" letterSpacing="3.5">PROJECT</text>
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '9px',
+                   fontWeight: 600, letterSpacing: '3.5px' }}>PROJECT</text>
       </svg>
     )
   }

@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Apply saved theme — light by default, only dark if user explicitly chose it */}
         <script dangerouslySetInnerHTML={{
-          __html: `(function(){if(localStorage.getItem('cp-theme')==='dark')document.documentElement.classList.add('dark');})()`
+          __html: `(function(){try{if(localStorage.getItem('cp-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})()`
         }} />
         {gaId && (
           <>
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           description: 'A weekly newsletter on education, policy, and entrepreneurship in India.',
         }) }} />
       </head>
-      <body className="min-h-screen flex flex-col bg-parchment dark:bg-charcoal transition-colors duration-200">
+      <body className="min-h-dvh flex flex-col bg-parchment dark:bg-charcoal">
         <ThemeProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

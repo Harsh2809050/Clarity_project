@@ -16,14 +16,19 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Only honour an explicit user choice — never auto-detect system dark mode
-    const stored = localStorage.getItem('cp-theme') as Theme | null
-    apply(stored ?? 'light')
+    // Wrapped in try/catch: Safari Private Mode throws QuotaExceededError on localStorage
+    try {
+      const stored = localStorage.getItem('cp-theme') as Theme | null
+      apply(stored ?? 'light')
+    } catch {
+      apply('light')
+    }
   }, [])
 
   function apply(t: Theme) {
     setTheme(t)
     document.documentElement.classList.toggle('dark', t === 'dark')
-    localStorage.setItem('cp-theme', t)
+    try { localStorage.setItem('cp-theme', t) } catch { /* Safari Private Mode */ }
   }
 
   return (

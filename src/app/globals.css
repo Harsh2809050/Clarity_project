@@ -19,14 +19,23 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* iOS Safari: let the browser control the full height */
+    height: -webkit-fill-available;
   }
 
   body {
-    @apply bg-parchment text-ink font-sans transition-colors duration-200;
+    @apply bg-parchment text-ink font-sans;
+    /* Use dvh (dynamic viewport) so iOS Safari address-bar doesn't cause overflow */
+    min-height: 100dvh;
   }
 
   .dark body {
     @apply bg-charcoal text-ink-snow;
+  }
+
+  /* Safari: ensure backdrop-filter works on sticky navbar */
+  .supports-backdrop-blur\:bg-parchment\/90 {
+    -webkit-backdrop-filter: blur(12px);
   }
 
   ::selection {
