@@ -8,6 +8,7 @@ import { ClarityLogo } from '@/components/ui/ClarityLogo'
 import { cn } from '@/lib/utils'
 
 const links = [
+  { href: '/our-work', label: 'Our Work' },
   { href: '/archive', label: 'Archive' },
   { href: '/about', label: 'About' },
   { href: '/be-a-guest', label: 'Be a Guest' },

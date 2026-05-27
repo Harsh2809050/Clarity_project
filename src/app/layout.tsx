@@ -1,12 +1,17 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Lora } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/ui/ThemeProvider'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' })
-const lora = Lora({ subsets: ['latin'], variable: '--font-serif', display: 'swap' })
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800', '900'],
+})
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://clarityproject.in'
 
@@ -40,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
   return (
-    <html lang="en" className={`${inter.variable} ${lora.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       <head>
         {/* Apply saved theme — light by default, only dark if user explicitly chose it */}
         <script dangerouslySetInnerHTML={{
