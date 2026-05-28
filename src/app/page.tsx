@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/home/Hero'
-import { FeaturedIssue } from '@/components/home/FeaturedIssue'
-import { RecentIssues } from '@/components/home/RecentIssues'
-import { SubscribeCTA } from '@/components/home/SubscribeCTA'
+import { HomeSections } from '@/components/home/HomeSections'
 import { fetchBeehiivPosts } from '@/lib/beehiiv'
 import { newsletters as fallback } from '@/data/newsletters'
 
@@ -16,17 +14,15 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const live = await fetchBeehiivPosts(10)
-  const all = live ?? fallback
+  const all  = live ?? fallback
 
-  const featured = all[0]
-  const recent = all.slice(1, 4)
+  const featured = all[0] ?? null
+  const recent   = all.slice(1, 4)
 
   return (
     <>
-      <Hero issue={featured} />
-      {featured && <FeaturedIssue issue={featured} />}
-      {recent.length > 0 && <RecentIssues issues={recent} />}
-      <SubscribeCTA />
+      <Hero issue={featured ?? undefined} />
+      <HomeSections featured={featured} recent={recent} />
     </>
   )
 }

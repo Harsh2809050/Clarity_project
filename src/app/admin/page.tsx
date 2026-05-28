@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ClarityLogo } from '@/components/ui/ClarityLogo'
 import { newsletters as seed } from '@/data/newsletters'
+import { loadSiteContent, saveSiteContent, defaultSiteContent, type SiteContent } from '@/lib/site-content'
 import type { Newsletter } from '@/types/newsletter'
 import type { Subscriber } from '@/app/api/admin/subscribers/route'
 
@@ -31,7 +32,7 @@ function slugify(s: string) {
 }
 
 /* ─── Types ──────────────────────────────────────────── */
-type Tab = 'overview' | 'issues' | 'subscribers'
+type Tab = 'overview' | 'issues' | 'subscribers' | 'content'
 type IssueMode = 'list' | 'add' | 'edit'
 
 /* ═══════════════════════════════════════════════════════
@@ -535,6 +536,114 @@ function NewsletterForm({ initial, onSave, onCancel }: {
 }
 
 /* ═══════════════════════════════════════════════════════
+   CONTENT TAB — edit hero text, stats, section visibility
+══════════════════════════════════════════════════════ */
+function ContentTab() {
+  const [c, setC]       = useState<SiteContent>(defaultSiteContent)
+  const [saved, setSaved] = useState(false)
+
+  useEffect(() => { setC(loadSiteContent()) }, [])
+
+  function save() {
+    saveSiteContent(c)
+    setSaved(true)
+    setTimeout(() => setSaved(false), 2000)
+  }
+
+  function setStat(i: number, key: 'n' | 'label', val: string) {
+    const stats = c.heroStats.map((s, idx) => idx === i ? { ...s, [key]: val } : s)
+    setC(prev => ({ ...prev, heroStats: stats }))
+  }
+
+  const inputCls = 'w-full px-4 py-2.5 input-base text-sm'
+  const labelCls = 'block font-sans text-xs font-semibold uppercase tracking-wider text-ink-faint dark:text-ink-snow-faint mb-1.5'
+
+  return (
+    <div className="space-y-10 max-w-2xl">
+
+      {/* Hero text */}
+      <div className="p-6 rounded-2xl border border-rim dark:border-rim-dark bg-surface dark:bg-surface-dark space-y-5">
+        <h2 className="font-serif text-lg font-bold text-ink dark:text-ink-snow">Hero Section</h2>
+
+        <div>
+          <label className={labelCls}>Eyebrow text</label>
+          <input className={inputCls} value={c.heroEyebrow}
+            onChange={e => setC(p => ({ ...p, heroEyebrow: e.target.value }))} />
+        </div>
+
+        <div>
+          <label className={labelCls}>Main Headline</label>
+          <textarea rows={2} className="w-full px-4 py-2.5 input-base text-sm resize-none"
+            value={c.heroHeadline}
+            onChange={e => setC(p => ({ ...p, heroHeadline: e.target.value }))} />
+        </div>
+
+        <div>
+          <label className={labelCls}>Subtitle / Description</label>
+          <textarea rows={3} className="w-full px-4 py-2.5 input-base text-sm resize-none"
+            value={c.heroSubtitle}
+            onChange={e => setC(p => ({ ...p, heroSubtitle: e.target.value }))} />
+        </div>
+      </div>
+
+      {/* Stats */}
+      <div className="p-6 rounded-2xl border border-rim dark:border-rim-dark bg-surface dark:bg-surface-dark space-y-4">
+        <h2 className="font-serif text-lg font-bold text-ink dark:text-ink-snow">Hero Stats</h2>
+        <div className="grid grid-cols-2 gap-3">
+          {c.heroStats.map((s, i) => (
+            <div key={i} className="flex gap-2 items-center p-3 rounded-xl bg-parchment-dim dark:bg-charcoal-lift">
+              <input className="w-16 px-2 py-1.5 input-base text-sm font-bold text-center"
+                value={s.n} onChange={e => setStat(i, 'n', e.target.value)} placeholder="8" />
+              <input className="flex-1 px-2 py-1.5 input-base text-sm"
+                value={s.label} onChange={e => setStat(i, 'label', e.target.value)} placeholder="Issues" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Section visibility */}
+      <div className="p-6 rounded-2xl border border-rim dark:border-rim-dark bg-surface dark:bg-surface-dark space-y-4">
+        <h2 className="font-serif text-lg font-bold text-ink dark:text-ink-snow">Page Sections</h2>
+        <p className="font-sans text-xs text-ink-muted dark:text-ink-snow-muted">Toggle which sections appear on the homepage below the hero.</p>
+
+        {([
+          { key: 'showFeatured', label: 'Featured Issue (large card)', desc: 'The highlighted latest issue section' },
+          { key: 'showRecent',   label: 'Recent Conversations (grid)', desc: '3-card grid of recent issues' },
+          { key: 'showCTA',      label: 'Subscribe CTA band',          desc: 'Dark email subscribe section at bottom' },
+        ] as { key: keyof SiteContent; label: string; desc: string }[]).map(({ key, label, desc }) => (
+          <label key={key} className="flex items-center justify-between gap-4 p-4 rounded-xl bg-parchment-dim dark:bg-charcoal-lift cursor-pointer group">
+            <div>
+              <p className="font-sans text-sm font-medium text-ink dark:text-ink-snow group-hover:text-sage transition-colors">{label}</p>
+              <p className="font-sans text-xs text-ink-faint dark:text-ink-snow-faint mt-0.5">{desc}</p>
+            </div>
+            <div className="relative shrink-0">
+              <input type="checkbox" className="sr-only" checked={c[key] as boolean}
+                onChange={e => setC(p => ({ ...p, [key]: e.target.checked }))} />
+              <div className={`w-10 h-6 rounded-full transition-colors ${c[key] ? 'bg-sage' : 'bg-rim dark:bg-rim-dark'}`}>
+                <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform ${c[key] ? 'translate-x-5' : 'translate-x-1'}`} />
+              </div>
+            </div>
+          </label>
+        ))}
+      </div>
+
+      {/* Save */}
+      <div className="flex items-center gap-3">
+        <button onClick={save}
+          className="font-sans text-sm font-medium px-6 py-2.5 rounded-xl bg-sage text-white hover:bg-sage-hover transition-all shadow-sm">
+          Save Changes
+        </button>
+        <button onClick={() => { setC(defaultSiteContent); saveSiteContent(defaultSiteContent) }}
+          className="font-sans text-sm px-4 py-2.5 rounded-xl border border-rim dark:border-rim-dark text-ink-muted hover:border-red-300 hover:text-red-500 transition-all">
+          Reset to Defaults
+        </button>
+        {saved && <span className="font-sans text-xs text-sage dark:text-sage-glow">✓ Saved — refresh the site to see changes</span>}
+      </div>
+    </div>
+  )
+}
+
+/* ═══════════════════════════════════════════════════════
    MAIN ADMIN PAGE
 ══════════════════════════════════════════════════════ */
 export default function AdminPage() {
@@ -586,6 +695,7 @@ export default function AdminPage() {
     { id: 'overview',     label: 'Overview'     },
     { id: 'issues',       label: 'Issues'       },
     { id: 'subscribers',  label: 'Subscribers'  },
+    { id: 'content',      label: 'Site Content' },
   ]
 
   return (
@@ -636,6 +746,7 @@ export default function AdminPage() {
             {tab === 'overview'    && <OverviewTab issueCount={issueCount} totalSubs={totalSubs} beehiivConfigured={beehiivOk} />}
             {tab === 'issues'      && <IssuesTab />}
             {tab === 'subscribers' && <SubscribersTab />}
+            {tab === 'content'     && <ContentTab />}
           </motion.div>
         </AnimatePresence>
       </main>
