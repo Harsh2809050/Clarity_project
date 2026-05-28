@@ -8,14 +8,15 @@ import { ShareButtons } from '@/components/ui/ShareButtons'
 import { SubscribeCTA } from '@/components/home/SubscribeCTA'
 import { AnimateIn } from '@/components/ui/AnimateIn'
 
-interface Props { params: { slug: string } }
+interface Props { params: Promise<{ slug: string }> }
 
 export function generateStaticParams() {
   return workIssues.map(issue => ({ slug: issue.id }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const issue = workIssues.find(i => i.id === params.slug)
+  const { slug } = await params
+  const issue = workIssues.find(i => i.id === slug)
   if (!issue) return { title: 'Issue Not Found' }
 
   const description = issue.subheadline
@@ -42,8 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function IssuePage({ params }: Props) {
-  const idx   = workIssues.findIndex(i => i.id === params.slug)
+export default async function IssuePage({ params }: Props) {
+  const { slug } = await params
+  const idx   = workIssues.findIndex(i => i.id === slug)
   if (idx === -1) notFound()
 
   const issue = workIssues[idx]
