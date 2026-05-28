@@ -108,14 +108,14 @@ export function Hero({ issue }: Props) {
                 >
                   {/* Thumbnail */}
                   {issue.image && (
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
                       <Image
                         src={issue.image}
                         alt={issue.title}
                         fill
                         priority
                         sizes="400px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="object-contain"
                       />
                       {/* Gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />

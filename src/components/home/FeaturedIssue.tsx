@@ -31,17 +31,13 @@ export function FeaturedIssue({ issue }: Props) {
             {/* Image panel */}
             <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] bg-parchment-dim dark:bg-charcoal-card overflow-hidden">
               {issue.image ? (
-                <motion.div className="absolute inset-0"
-                  variants={{ hovered: { scale: 1.04 } }}
-                  transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}>
+                <div className="absolute inset-0">
                   <Image
                     src={issue.image} alt={issue.title} fill priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
+                    className="object-contain"
                   />
-                  {/* Soft gradient overlay at bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                </motion.div>
+                </div>
               ) : (
                 <div className="absolute inset-0 bg-gradient-to-br from-sage-light to-parchment-dim dark:from-sage/10 dark:to-charcoal-card" />
               )}

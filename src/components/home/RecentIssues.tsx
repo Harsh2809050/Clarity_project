@@ -19,12 +19,12 @@ function IssueCard({ issue }: { issue: Newsletter }) {
         className="flex flex-col overflow-hidden rounded-2xl border border-rim dark:border-rim-dark bg-surface dark:bg-surface-dark shadow-card dark:shadow-card-dark group cursor-pointer"
       >
         {/* Image */}
-        <div className="relative aspect-[16/9] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
+        <div className="relative aspect-[4/3] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
           {issue.image ? (
             <Image
               src={issue.image} alt={issue.title} fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover transition-transform duration-500 ease-smooth group-hover:scale-[1.04]"
+              className="object-contain"
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-sage-light to-parchment dark:from-sage/10 dark:to-charcoal-card" />

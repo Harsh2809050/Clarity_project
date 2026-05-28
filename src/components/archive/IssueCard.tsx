@@ -23,13 +23,11 @@ export function IssueCard({ issue, featured = false }: Props) {
         className="group grid grid-cols-1 lg:grid-cols-5 rounded-2xl overflow-hidden border border-rim dark:border-rim-dark shadow-card dark:shadow-card-dark cursor-pointer"
       >
         {/* Image (wider) */}
-        <div className="relative lg:col-span-3 aspect-[16/9] lg:aspect-auto lg:min-h-[360px] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
+        <div className="relative lg:col-span-3 aspect-[4/3] lg:aspect-auto lg:min-h-[360px] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
           {issue.image ? (
-            <motion.div className="absolute inset-0"
-              variants={{ hovered: { scale: 1.04 } }}
-              transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}>
-              <Image src={issue.image} alt={issue.title} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
-            </motion.div>
+            <div className="absolute inset-0">
+              <Image src={issue.image} alt={issue.title} fill priority sizes="(max-width: 1024px) 100vw, 60vw" className="object-contain" />
+            </div>
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-sage-light to-parchment dark:from-sage/10 dark:to-charcoal-card" />
           )}
@@ -73,12 +71,12 @@ export function IssueCard({ issue, featured = false }: Props) {
       className="flex flex-col overflow-hidden rounded-2xl border border-rim dark:border-rim-dark bg-surface dark:bg-surface-dark shadow-card dark:shadow-card-dark group cursor-pointer"
     >
       {/* Image */}
-      <div className="relative aspect-[16/9] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
+      <div className="relative aspect-[4/3] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
         {issue.image ? (
           <Image
             src={issue.image} alt={issue.title} fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 ease-smooth group-hover:scale-[1.04]"
+            className="object-contain"
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-sage-light to-parchment dark:from-sage/10 dark:to-charcoal-card" />
