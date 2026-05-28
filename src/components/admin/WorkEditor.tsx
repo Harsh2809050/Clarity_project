@@ -9,6 +9,7 @@ import { TableOfContents } from '@/components/work/TableOfContents'
 import { EditableText } from './EditableText'
 import { getWorkIssues, saveWorkIssues, isAdmin, isEditMode } from '@/lib/page-content'
 import { workIssues as staticIssues, type WorkIssue } from '@/data/work'
+import { ImageUploadField } from './ImageUploadField'
 
 const EMPTY_ISSUE: WorkIssue = {
   id: '', issueNumber: 0, date: '', topic: '', headline: '', subheadline: '',
@@ -81,7 +82,9 @@ function AddIssueForm({ onAdd, onCancel, nextNumber }: {
           <div><label className={lbl}>Guest Title</label><input className={inp} value={form.guest.title} onChange={e => setGuest('title', e.target.value)} /></div>
         </div>
 
-        <div><label className={lbl}>Thumbnail URL</label><input className={inp} value={form.thumbnail ?? ''} onChange={e => set('thumbnail', e.target.value)} placeholder="/thumbnails/..." /></div>
+        <div className="col-span-2">
+          <ImageUploadField value={form.thumbnail ?? ''} onChange={url => set('thumbnail', url)} />
+        </div>
         <div><label className={lbl}>Episode URL</label><input className={inp} value={form.episodeUrl} onChange={e => set('episodeUrl', e.target.value)} /></div>
 
         <div className="space-y-3">
@@ -176,7 +179,7 @@ export function WorkEditor() {
                   <div className="absolute -inset-6 rounded-3xl bg-sage/[0.07] dark:bg-sage/[0.05] blur-3xl pointer-events-none" />
                   <div className="relative rounded-2xl overflow-hidden border border-rim dark:border-rim-dark shadow-card-hover dark:shadow-card-hover-dark">
                     <div className="relative aspect-[2/1] overflow-hidden">
-                      <Image src={issues[0].thumbnail} alt={issues[0].headline} fill priority sizes="600px" className="object-contain" />
+                      <Image src={issues[0].thumbnail} alt={issues[0].headline} fill priority sizes="600px" className="object-contain" unoptimized={issues[0].thumbnail.startsWith('data:')} />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                       <div className="absolute top-4 left-4">
                         <span className="inline-block font-sans text-[10px] font-semibold uppercase tracking-[0.12em] px-2.5 py-1 rounded-md bg-sage text-white">
@@ -324,7 +327,7 @@ export function WorkEditor() {
                             {issue.thumbnail && (
                               <div className="rounded-2xl overflow-hidden border border-rim dark:border-rim-dark shadow-card dark:shadow-card-dark">
                                 <div className="relative aspect-[4/3] overflow-hidden bg-parchment-dim dark:bg-charcoal-card">
-                                  <Image src={issue.thumbnail} alt={issue.headline} fill sizes="300px" className="object-contain" />
+                                  <Image src={issue.thumbnail} alt={issue.headline} fill sizes="300px" className="object-contain" unoptimized={issue.thumbnail.startsWith('data:')} />
                                 </div>
                                 <div className="p-4 bg-surface dark:bg-surface-dark">
                                   <p className="font-sans text-[11px] font-semibold uppercase tracking-wider text-sage dark:text-sage-glow mb-1">{issue.topic}</p>
