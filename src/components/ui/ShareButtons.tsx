@@ -13,7 +13,8 @@ export function ShareButtons({ url, title, className = '', compact = false }: Pr
   const [copied, setCopied] = useState(false)
   const enc = encodeURIComponent
 
-  const fullUrl = url.startsWith('http') ? url : `https://theclarityproject.in${url}`
+  const base    = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.theclarityproject.in'
+  const fullUrl = url.startsWith('http') ? url : `${base}${url}`
 
   const platforms = [
     {

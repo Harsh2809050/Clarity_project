@@ -10,6 +10,7 @@ import { EditableText } from './EditableText'
 import { getWorkIssues, saveWorkIssues, isAdmin, isEditMode } from '@/lib/page-content'
 import { workIssues as staticIssues, type WorkIssue } from '@/data/work'
 import { ImageUploadField } from './ImageUploadField'
+import { ShareButtons } from '@/components/ui/ShareButtons'
 
 const EMPTY_ISSUE: WorkIssue = {
   id: '', issueNumber: 0, date: '', topic: '', headline: '', subheadline: '',
@@ -308,17 +309,20 @@ export function WorkEditor() {
                               </div>
                             )
                           })}
-                          <div className="mt-12 pt-8 border-t border-rim dark:border-rim-dark flex flex-wrap items-center gap-5">
-                            <a href={issue.episodeUrl} target="_blank" rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 font-sans text-[13px] font-semibold bg-sage text-white px-5 py-2.5 rounded-xl hover:bg-sage-hover transition-all shadow-sm">
-                              🎙&nbsp; Listen to the episode
-                            </a>
-                            <Link href={`/issues/${issue.id}`} className="inline-flex items-center gap-1.5 font-sans text-[13px] font-medium text-sage dark:text-sage-glow hover:underline underline-offset-4">
-                              View full page →
-                            </Link>
-                            <Link href="/subscribe" className="font-sans text-[13px] font-medium text-ink-faint dark:text-ink-snow-faint hover:text-sage dark:hover:text-sage-glow hover:underline underline-offset-4 transition-colors">
-                              Get the next issue free →
-                            </Link>
+                          <div className="mt-12 pt-8 border-t border-rim dark:border-rim-dark space-y-5">
+                            <div className="flex flex-wrap items-center gap-5">
+                              <a href={issue.episodeUrl} target="_blank" rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 font-sans text-[13px] font-semibold bg-sage text-white px-5 py-2.5 rounded-xl hover:bg-sage-hover transition-all shadow-sm">
+                                🎙&nbsp; Listen to the episode
+                              </a>
+                              <Link href={`/issues/${issue.id}`} className="inline-flex items-center gap-1.5 font-sans text-[13px] font-medium text-sage dark:text-sage-glow hover:underline underline-offset-4">
+                                View full page →
+                              </Link>
+                              <Link href="/subscribe" className="font-sans text-[13px] font-medium text-ink-faint dark:text-ink-snow-faint hover:text-sage dark:hover:text-sage-glow hover:underline underline-offset-4 transition-colors">
+                                Get the next issue free →
+                              </Link>
+                            </div>
+                            <ShareButtons url={`/issues/${issue.id}`} title={issue.headline} />
                           </div>
                         </div>
 
