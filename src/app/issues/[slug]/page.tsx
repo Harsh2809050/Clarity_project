@@ -32,13 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: issue.date,
       authors: [issue.guest.name],
-      ...(issue.thumbnail ? { images: [{ url: issue.thumbnail, width: 1200, height: 675 }] } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title: issue.headline,
       description,
-      ...(issue.thumbnail ? { images: [issue.thumbnail] } : {}),
     },
   }
 }
