@@ -27,9 +27,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: siteUrl,
     siteName: 'Clarity Project',
-    images: [{ url: '/thumbnails/issue-01-mahesh-balakrishnan.png', width: 1200, height: 675 }],
   },
-  twitter: { card: 'summary_large_image', images: ['/thumbnails/issue-01-mahesh-balakrishnan.png'] },
+  twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
 }
 
