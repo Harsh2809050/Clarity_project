@@ -3,16 +3,18 @@
 import { usePathname } from 'next/navigation'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
+import { AdminBar } from '@/components/admin/AdminBar'
 
 export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const isAdmin = pathname?.startsWith('/admin')
+  const isAdminPage = pathname?.startsWith('/admin')
 
   return (
     <>
-      {!isAdmin && <Navbar />}
+      {!isAdminPage && <Navbar />}
       <main className="flex-1">{children}</main>
-      {!isAdmin && <Footer />}
+      {!isAdminPage && <Footer />}
+      {!isAdminPage && <AdminBar />}
     </>
   )
 }

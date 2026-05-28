@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ClarityLogo } from '@/components/ui/ClarityLogo'
 import { newsletters as seed } from '@/data/newsletters'
 import { loadSiteContent, saveSiteContent, defaultSiteContent, type SiteContent } from '@/lib/site-content'
+import { setAdminFlag } from '@/lib/page-content'
 import type { Newsletter } from '@/types/newsletter'
 import type { Subscriber } from '@/app/api/admin/subscribers/route'
 
@@ -52,7 +53,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: pw }),
     })
-    if (res.ok) { onLogin() } else { setError('Wrong password. Try again.'); setPw('') }
+    if (res.ok) { setAdminFlag(true); onLogin() } else { setError('Wrong password. Try again.'); setPw('') }
     setBusy(false)
   }
 
@@ -679,6 +680,7 @@ export default function AdminPage() {
 
   async function logout() {
     await fetch('/api/admin/logout', { method: 'POST' })
+    setAdminFlag(false)
     setAuthed(false)
   }
 
