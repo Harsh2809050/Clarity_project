@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 
 const links = [
   { href: '/about', label: 'About' },
+  { href: '/our-work', label: 'Our Work' },
   { href: '/be-a-guest', label: 'Be a Guest' },
 ]
 
@@ -54,10 +55,10 @@ export function Navbar() {
         ? 'border-b border-rim dark:border-rim-dark shadow-[0_1px_12px_0_rgb(0_0_0_/_0.04)]'
         : 'border-b border-transparent'
     )}>
-      <nav className="container-editorial flex items-center justify-between h-[72px]">
+      <nav className="container-editorial flex items-center justify-between h-[80px]">
 
         {/* Brand */}
-        <ClarityLogo variant="horizontal" size={58} asLink />
+        <ClarityLogo variant="horizontal" size={70} asLink />
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-7">

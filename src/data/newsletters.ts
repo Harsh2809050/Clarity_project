@@ -14,8 +14,7 @@ export const newsletters: Newsletter[] = [
     topic: 'Education Policy',
     topicSlug: 'education-policy',
     url: 'https://clarityproject.beehiiv.com/p/why-indian-schools-are-failing-their-best-teachers',
-    image:
-      'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&h=675&q=80',
+    image: '/thumbnails/issue-01-mahesh-balakrishnan.png',
     readTime: '8 min read',
   },
   {

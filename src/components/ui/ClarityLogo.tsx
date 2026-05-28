@@ -64,10 +64,10 @@ export function ClarityLogo({
       </svg>
     )
   } else if (variant === 'horizontal') {
-    // Horizontal: sun left, THE / Clarity / PROJECT stacked right
-    // Sun: R_OUT=48, centre at cx=48 cy=48 → fits in 96×96
-    // Text block vertically centred in 96 units, left-anchored at x=104
-    const VW = 220, VH = 96
+    // Horizontal: sun left, THE / Clarity / PROJECT stacked right — all centred at x=168
+    // Sun: R_OUT=48, centre at cx=48 cy=48 → spans x 0..96
+    // Text area: x=96..240 → centre = 96 + (240-96)/2 = 168
+    const VW = 240, VH = 96
     const w  = Math.round(size * (VW / VH))
     svg = (
       <svg viewBox={`0 0 ${VW} ${VH}`} width={w} height={size}
@@ -75,18 +75,18 @@ export function ClarityLogo({
         className={cn('shrink-0', 'text-[#1B2D4F] dark:text-[#EDE8E2]', className)}>
         <Sun cx={48} cy={48} />
 
-        {/* Clarity — left-anchored, width ≈81 units, centre ≈143 */}
-        <text x="102" y="67" textAnchor="start" fill="currentColor"
-          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '29px',
-                   fontWeight: 800, letterSpacing: '-0.5px' }}>Clarity</text>
-
-        {/* THE — centred over Clarity (midpoint of Clarity text) */}
-        <text x="143" y="40" textAnchor="middle" fill="currentColor"
+        {/* THE — centred block, properly spaced */}
+        <text x="168" y="26" textAnchor="middle" fill="currentColor"
           style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '8.5px',
                    fontWeight: 500, letterSpacing: '3.5px' }}>THE</text>
 
-        {/* PROJECT — centred below Clarity */}
-        <text x="143" y="82" textAnchor="middle" fill={ORANGE}
+        {/* Clarity — 3.5 px visual gap below THE (baseline gap = 35 SVG units) */}
+        <text x="168" y="61" textAnchor="middle" fill="currentColor"
+          style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '29px',
+                   fontWeight: 800, letterSpacing: '-0.5px' }}>Clarity</text>
+
+        {/* PROJECT — tight below Clarity */}
+        <text x="168" y="78" textAnchor="middle" fill={ORANGE}
           style={{ fontFamily: 'Inter,system-ui,sans-serif', fontSize: '9px',
                    fontWeight: 600, letterSpacing: '3.5px' }}>PROJECT</text>
       </svg>

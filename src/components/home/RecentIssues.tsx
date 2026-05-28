@@ -73,7 +73,7 @@ function IssueCard({ issue }: { issue: Newsletter }) {
 
 export function RecentIssues({ issues }: { issues: Newsletter[] }) {
   return (
-    <section className="section-y bg-parchment-dim dark:bg-charcoal-lift">
+    <section className="section-y bg-parchment-dim dark:bg-charcoal-lift dot-grid">
       <div className="container-editorial">
 
         <AnimateIn className="flex items-end justify-between mb-12">

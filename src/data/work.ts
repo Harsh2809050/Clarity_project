@@ -12,6 +12,8 @@ export interface WorkIssue {
   headline: string
   subheadline?: string
   episodeUrl: string
+  thumbnail?: string
+  readTime?: string
   pullQuotes: Array<{ quote: string; attribution: string }>
   sections: WorkSection[]
 }
@@ -28,7 +30,9 @@ export const workIssues: WorkIssue[] = [
     },
     headline: 'Your school has a ₹8 crore lobby and a ₹8 lakh teacher.',
     subheadline: 'Guess which one is leaving.',
-    episodeUrl: 'https://clarityproject.in/archive',
+    episodeUrl: 'https://clarityproject.beehiiv.com/p/why-indian-schools-are-failing-their-best-teachers',
+    thumbnail: '/thumbnails/issue-01-mahesh-balakrishnan.png',
+    readTime: '8 min read',
     pullQuotes: [
       {
         quote:

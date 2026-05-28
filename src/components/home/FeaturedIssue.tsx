@@ -26,7 +26,7 @@ export function FeaturedIssue({ issue }: Props) {
             rel="noopener noreferrer"
             aria-label={`Read: ${issue.title}`}
             whileHover="hovered"
-            className="group grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden border border-rim dark:border-rim-dark shadow-card dark:shadow-card-dark cursor-pointer"
+            className="group grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden border border-sage/20 dark:border-sage-glow/15 shadow-card-hover dark:shadow-card-hover-dark cursor-pointer"
           >
             {/* Image panel */}
             <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] bg-parchment-dim dark:bg-charcoal-card overflow-hidden">
@@ -48,7 +48,10 @@ export function FeaturedIssue({ issue }: Props) {
             </div>
 
             {/* Content panel */}
-            <div className="flex flex-col justify-center p-8 md:p-12 bg-surface dark:bg-surface-dark">
+            <div className="flex flex-col justify-center bg-surface dark:bg-surface-dark relative overflow-hidden">
+              {/* Brand accent stripe at top */}
+              <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-sage via-sage-glow/60 to-transparent" />
+              <div className="p-8 md:p-12">
               <div className="flex items-center gap-3 mb-6">
                 <Badge variant="sage">{issue.topic}</Badge>
                 <span className="font-sans text-xs text-ink-faint dark:text-ink-snow-faint">{issue.date}</span>
@@ -80,7 +83,8 @@ export function FeaturedIssue({ issue }: Props) {
               </motion.div>
 
               <span className="mt-2 font-sans text-xs text-ink-faint dark:text-ink-snow-faint">{issue.readTime}</span>
-            </div>
+              </div>{/* /inner padding */}
+            </div>{/* /content panel */}
           </motion.a>
         </AnimateIn>
 

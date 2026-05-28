@@ -10,13 +10,13 @@ interface Props {
   utmSource?: string
   placeholder?: string
   buttonLabel?: string
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
   dark?: boolean
 }
 
 function SuccessCard({ dark, size }: { dark: boolean; size: Props['size'] }) {
-  if (size === 'sm') {
+  if (size === 'sm' || size === 'md') {
     // Compact inline success for footer / small contexts
     return (
       <div className="flex items-center gap-2">
@@ -120,10 +120,10 @@ export function SubscribeForm({
 
   // --- Already subscribed (also a success variant) ---
 
-  const h    = { sm: 'h-10', md: 'h-12', lg: 'h-14' }[size]
-  const px   = { sm: 'px-3', md: 'px-4', lg: 'px-5' }[size]
-  const bpx  = { sm: 'px-4', md: 'px-6', lg: 'px-8' }[size]
-  const text = { sm: 'text-sm', md: 'text-sm', lg: 'text-[15px]' }[size]
+  const h    = { sm: 'h-10', md: 'h-12', lg: 'h-14', xl: 'h-[60px]' }[size]
+  const px   = { sm: 'px-3', md: 'px-4', lg: 'px-5', xl: 'px-6'    }[size]
+  const bpx  = { sm: 'px-4', md: 'px-6', lg: 'px-8', xl: 'px-10'   }[size]
+  const text = { sm: 'text-sm', md: 'text-sm', lg: 'text-[15px]', xl: 'text-[16px]' }[size]
 
   return (
     <div className={className}>

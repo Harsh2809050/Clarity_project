@@ -48,7 +48,7 @@ const listenOn = [
 
 export function PastGuests() {
   return (
-    <section className="section-y bg-parchment-dim dark:bg-charcoal-lift">
+    <section className="section-y bg-parchment dark:bg-charcoal">
       <div className="container-editorial">
 
         {/* Header */}
@@ -63,9 +63,11 @@ export function PastGuests() {
 
         {/* Featured quote — first guest */}
         <AnimateIn delay={0.05} className="mb-10">
-          <div className="relative p-8 md:p-10 rounded-2xl bg-surface dark:bg-surface-dark border border-rim dark:border-rim-dark shadow-card dark:shadow-card-dark overflow-hidden">
+          <div className="relative p-8 md:p-10 rounded-2xl bg-surface dark:bg-surface-dark border border-sage/20 dark:border-sage-glow/15 shadow-card-hover dark:shadow-card-hover-dark overflow-hidden">
+            {/* Brand accent stripe */}
+            <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-sage via-sage-glow/60 to-transparent" />
             {/* Big open-quote decoration */}
-            <span className="absolute top-4 left-8 font-serif text-[120px] leading-none text-sage/[0.07] dark:text-sage-glow/[0.06] select-none pointer-events-none" aria-hidden="true">&ldquo;</span>
+            <span className="absolute top-4 left-8 font-serif text-[120px] leading-none text-sage/[0.09] dark:text-sage-glow/[0.07] select-none pointer-events-none" aria-hidden="true">&ldquo;</span>
 
             <div className="relative flex flex-col md:flex-row gap-7 items-start">
               <div className="shrink-0">

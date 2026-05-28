@@ -10,7 +10,7 @@ const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-serif',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['600', '700', '800'],   // only weights actually used for headings
 })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://clarityproject.in'
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: siteUrl,
     siteName: 'Clarity Project',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/thumbnails/issue-01-mahesh-balakrishnan.png', width: 1200, height: 675 }],
   },
-  twitter: { card: 'summary_large_image', images: ['/og-image.jpg'] },
+  twitter: { card: 'summary_large_image', images: ['/thumbnails/issue-01-mahesh-balakrishnan.png'] },
   robots: { index: true, follow: true },
 }
 
@@ -47,6 +47,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
       <head>
+        {/* Preconnect to speed up Google Fonts + image CDNs */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://cdn.beehiiv.com" />
+
         {/* Apply saved theme — light by default, only dark if user explicitly chose it */}
         <script dangerouslySetInnerHTML={{
           __html: `(function(){try{if(localStorage.getItem('cp-theme')==='dark')document.documentElement.classList.add('dark');}catch(e){}})()`
