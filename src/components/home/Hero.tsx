@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { SubscribeForm } from '@/components/ui/SubscribeForm'
 import { loadSiteContent, defaultSiteContent, type SiteContent } from '@/lib/site-content'
+import { EditableText } from '@/components/admin/EditableText'
 import type { Newsletter } from '@/types/newsletter'
 
 interface Props { issue?: Newsletter }
@@ -31,19 +32,19 @@ export function Hero({ issue }: Props) {
             <div className="anim-fade-up anim-d0">
               <span className="inline-flex items-center gap-2 eyebrow mb-7">
                 <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
-                {content.heroEyebrow}
+                <EditableText page="home" field="hero_eyebrow" fallback={content.heroEyebrow} />
               </span>
             </div>
 
             <div className="anim-fade-up anim-d1">
               <h1 className="font-serif text-display font-bold text-ink dark:text-ink-snow leading-[1.06] tracking-tight text-balance mb-6">
-                {content.heroHeadline}
+                <EditableText page="home" field="hero_headline" fallback={content.heroHeadline} />
               </h1>
             </div>
 
             <div className="anim-fade-up anim-d2">
               <p className="body-lg dark:!text-ink-snow-muted max-w-xl text-balance mb-10">
-                {content.heroSubtitle}
+                <EditableText page="home" field="hero_subtitle" fallback={content.heroSubtitle} />
               </p>
             </div>
 
@@ -81,7 +82,7 @@ export function Hero({ issue }: Props) {
                   className="relative block rounded-2xl overflow-hidden border border-rim dark:border-rim-dark bg-surface dark:bg-surface-dark group shadow-card dark:shadow-card-dark transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover dark:hover:shadow-card-hover-dark"
                 >
                   {issue.image && (
-                    <div className="relative aspect-[4/3] bg-parchment-dim dark:bg-charcoal-card">
+                    <div className="relative aspect-[4/3] bg-white dark:bg-charcoal-card overflow-hidden">
                       <Image
                         src={issue.image}
                         alt={issue.title}
@@ -90,8 +91,12 @@ export function Hero({ issue }: Props) {
                         sizes="420px"
                         className="object-contain"
                       />
+                      {/* Subtle bottom fade for text legibility */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                      {/* Single clean badge combining Latest Issue + live pulse */}
                       <div className="absolute top-3 left-3">
-                        <span className="inline-block font-sans text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 rounded-md bg-sage text-white shadow-sm">
+                        <span className="inline-flex items-center gap-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full bg-sage/90 backdrop-blur-sm text-white shadow-sm">
+                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse shrink-0" />
                           Latest Issue
                         </span>
                       </div>
@@ -123,13 +128,6 @@ export function Hero({ issue }: Props) {
                     </div>
                   </div>
                 </a>
-
-                <div className="absolute -top-3 -right-3 bg-white dark:bg-surface-dark rounded-xl border border-rim/60 dark:border-rim-dark shadow-card-hover px-3 py-2 pointer-events-none">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
-                    <p className="font-sans text-[10px] font-semibold uppercase tracking-wider text-ink dark:text-ink-snow">New</p>
-                  </div>
-                </div>
 
               </div>
             </div>

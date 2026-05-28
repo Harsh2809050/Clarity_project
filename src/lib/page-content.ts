@@ -36,6 +36,18 @@ export function toggleEditMode(): void {
   window.dispatchEvent(new Event('cp_edit_change'))
 }
 
+/* ── generic array store (subscribe benefits, FAQs, etc) ── */
+export function getPageArray<T>(key: string, fallback: T[]): T[] {
+  if (typeof window === 'undefined') return fallback
+  try {
+    const raw = localStorage.getItem(key)
+    return raw ? (JSON.parse(raw) as T[]) : fallback
+  } catch { return fallback }
+}
+export function savePageArray<T>(key: string, items: T[]): void {
+  localStorage.setItem(key, JSON.stringify(items))
+}
+
 /* ── work issues override store ───────────────────── */
 import type { WorkIssue } from '@/data/work'
 
