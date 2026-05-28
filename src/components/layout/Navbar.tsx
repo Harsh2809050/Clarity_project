@@ -8,8 +8,9 @@ import { ClarityLogo } from '@/components/ui/ClarityLogo'
 import { cn } from '@/lib/utils'
 
 const links = [
-  { href: '/about', label: 'About' },
-  { href: '/our-work', label: 'Our Work' },
+  { href: '/about',      label: 'About' },
+  { href: '/our-work',   label: 'Our Work' },
+  { href: '/guests',     label: 'Guests' },
   { href: '/be-a-guest', label: 'Be a Guest' },
 ]
 
@@ -73,6 +74,18 @@ export function Navbar() {
               {label}
             </Link>
           ))}
+
+          {/* Search icon */}
+          <Link href="/search" aria-label="Search"
+            className={cn('w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200',
+              pathname === '/search'
+                ? 'text-sage bg-sage/10'
+                : 'text-ink-muted dark:text-ink-snow-muted hover:text-ink dark:hover:text-ink-snow hover:bg-parchment-dim dark:hover:bg-charcoal-lift'
+            )}>
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </Link>
 
           {/* Dark mode toggle */}
           <button onClick={toggle} aria-label="Toggle dark mode"

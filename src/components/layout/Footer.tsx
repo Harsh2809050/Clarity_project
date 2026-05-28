@@ -3,11 +3,14 @@ import { SubscribeForm } from '@/components/ui/SubscribeForm'
 import { ClarityLogo } from '@/components/ui/ClarityLogo'
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/our-work', label: 'Our Work' },
+  { href: '/',           label: 'Home' },
+  { href: '/about',      label: 'About' },
+  { href: '/our-work',   label: 'Our Work' },
+  { href: '/guests',     label: 'Past Guests' },
+  { href: '/archive',    label: 'Archive' },
   { href: '/be-a-guest', label: 'Be a Guest' },
-  { href: '/subscribe', label: 'Subscribe' },
+  { href: '/sponsor',    label: 'Sponsor' },
+  { href: '/subscribe',  label: 'Subscribe' },
 ]
 
 const listenLinks = [
@@ -87,9 +90,9 @@ export function Footer() {
             © 2026 Clarity Project. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            {['Privacy Policy', 'Terms'].map(l => (
-              <a key={l} href="#" className="font-sans text-xs text-ink-faint dark:text-ink-snow-faint hover:text-ink-muted dark:hover:text-ink-snow-muted transition-colors">{l}</a>
-            ))}
+            <Link href="/privacy" className="font-sans text-xs text-ink-faint dark:text-ink-snow-faint hover:text-ink-muted dark:hover:text-ink-snow-muted transition-colors">Privacy Policy</Link>
+            <Link href="/terms"   className="font-sans text-xs text-ink-faint dark:text-ink-snow-faint hover:text-ink-muted dark:hover:text-ink-snow-muted transition-colors">Terms</Link>
+            <Link href="/sponsor" className="font-sans text-xs text-ink-faint dark:text-ink-snow-faint hover:text-ink-muted dark:hover:text-ink-snow-muted transition-colors">Sponsor</Link>
           </div>
         </div>
       </div>

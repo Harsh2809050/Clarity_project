@@ -5,6 +5,7 @@ import { loadSiteContent, defaultSiteContent } from '@/lib/site-content'
 import { FeaturedIssue } from './FeaturedIssue'
 import { RecentIssues } from './RecentIssues'
 import { SubscribeCTA } from './SubscribeCTA'
+import { Testimonials } from './Testimonials'
 import type { Newsletter } from '@/types/newsletter'
 
 interface Props {
@@ -20,6 +21,7 @@ export function HomeSections({ featured, recent }: Props) {
     <>
       {s.showFeatured && featured && <FeaturedIssue issue={featured} />}
       {s.showRecent  && recent.length > 0 && <RecentIssues issues={recent} />}
+      <Testimonials />
       {s.showCTA     && <SubscribeCTA />}
     </>
   )

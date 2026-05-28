@@ -310,7 +310,10 @@ export function WorkEditor() {
                               className="inline-flex items-center gap-2 font-sans text-[13px] font-semibold bg-sage text-white px-5 py-2.5 rounded-xl hover:bg-sage-hover transition-all shadow-sm">
                               🎙&nbsp; Listen to the episode
                             </a>
-                            <Link href="/subscribe" className="font-sans text-[13px] font-medium text-sage dark:text-sage-glow hover:underline underline-offset-4">
+                            <Link href={`/issues/${issue.id}`} className="inline-flex items-center gap-1.5 font-sans text-[13px] font-medium text-sage dark:text-sage-glow hover:underline underline-offset-4">
+                              View full page →
+                            </Link>
+                            <Link href="/subscribe" className="font-sans text-[13px] font-medium text-ink-faint dark:text-ink-snow-faint hover:text-sage dark:hover:text-sage-glow hover:underline underline-offset-4 transition-colors">
                               Get the next issue free →
                             </Link>
                           </div>
