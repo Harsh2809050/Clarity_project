@@ -247,8 +247,8 @@ export default function AboutPage() {
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-parchment-dim dark:bg-charcoal-lift shadow-card dark:shadow-card-dark relative">
                   <EditableImage
                     page={P} field="host_photo"
-                    fallback="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=1000&q=80"
-                    alt="Host photo" fill sizes="(max-width: 1024px) 100vw, 50vw"
+                    fallback="/aarthik-ramkumar.jpg"
+                    alt="Aarthik Ramkumar" fill sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
